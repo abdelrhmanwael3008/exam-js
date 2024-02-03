@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Yummy</title>
+</head>
+
+<body>
+    <section id="searchSection" class="search">
+        <!-- <div class="container d-flex justify-content-between">
+            <input id="searchByName" oninput="searchBn(this.value)" type="text" placeholder="Search By Name"
+                class="form-control bg-transparent text-white me-1">
+            <input id="searchByFirstLetter" maxlength="1" oninput="searchBFl(this.value)" type="text"
+                placeholder="Search By First Letter" class="form-control bg-transparent text-white ms-1">
+        </div>
+        <div class="row searched pt-5" id="searched"></div> -->
+    </section>
+
+    <!--  
+    <section id="contactSection"
+        class="contactSection position-absolute top-0 bottom-0 start-0 end-0  bg-black py-5 px-5">
+        <div class="container h-100 d-flex justify-content-center align-items-center">
+            <div class="contactContent w-75 d-flex flex-wrap" id="contactContent">
+                <div class="inpParent p-2 w-50">
+                    <input type="text" id="nameInput" oninput="inputsValidation()" placeholder="Enter Your Name"
+                        class="form-control">
+                    <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Special characters and numbers not allowed
+                    </div>
+                </div>
+                <div class="inpParent p-2 w-50">
+                    <input type="email" id="emailInput" oninput="inputsValidation()" placeholder="Enter Your Email"
+                        class="form-control">
+                    <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Invalid email format
+                    </div>
+                </div>
+                <div class="inpParent p-2 w-50">
+                    <input type="tel" id="phoneInput" oninput="inputsValidation()" placeholder="Enter Your Phone"
+                        class="form-control">
+                    <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Invalid phone number
+                    </div>
+                </div>
+                <div class="inpParent p-2 w-50">
+                    <input type="number" id="ageInput" oninput="inputsValidation()" placeholder="Enter Your Age"
+                        class="form-control">
+                    <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Invalid age
+                    </div>
+                </div>
+                <div class="inpParent p-2 w-50">
+                    <input type="password" id="passwordInput" oninput="inputsValidation()"
+                        placeholder="Enter Your Password" class="form-control">
+                    <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Password must contain at least one digit and one lowercase letter, and be at least 8 characters
+                        long
+                    </div>
+                </div>
+                <div class="inpParent p-2 w-50">
+                    <input type="password" id="repasswordInput" oninput="inputsValidation()" placeholder="Repassword"
+                        class="form-control">
+                    <div id="repasswordAlert" class="alert alert-danger w-100 mt-2 d-none">
+                        Passwords do not match
+                    </div>
+                </div>
+                <div class="btnParent w-100 text-center py-2">
+                    <button id="submitBtn" class="btn bg-transparent border-danger text-danger" disabled>Submit</button>
+                </div>
+
+
+            </div>
+        </div>
+    </section> -->
+    <div id="spinnerParent" class="spinner-parent w-100 vh-100 position-absolute">
+        <div class="spinner"></div>
+        <div class="spinnerTwo"></div>
+        <div class="spinnerThree"></div>
+        <div class="spinnerFour"></div>
+        <div class="spinnerFive"></div>
+        <div class="spinnerSix"></div>
+    </div>
+    <div class="side min-vh-100  position-fixed top-0 d-flex" id="side">
+        <div class="sideBar overflow-hidden" id="sideBar">
+            <div class="parent d-flex justify-content-between h-100 flex-column">
+                <ul id="listSideBar" class="py-4 px-3 overflow-hidden">
+                    <li class="fw-medium position-relative my-2" onclick="searchContainer()" id="searchLnk">Search</li>
+                    <li class="fw-medium position-relative top-0 my-2" onclick="getCategories()" id="categoriesLnk">
+                        Categories</li>
+                    <li class="fw-medium position-relative top-0 my-2" onclick="getArea()" id="areaLnk">Area</li>
+                    <li class="fw-medium position-relative top-0 my-2" onclick="getIngrediendts()" id="ingredientsLnk">
+                        Ingredients</li>
+                    <li class="fw-medium position-relative top-0 my-2" onclick="displayContact()" id="contactLnk">
+                        Contact Us</li>
+                </ul>
+                <div class="media position-fixed bottom-0 p-3">
+                    <div class="icons text-white">
+                        <i class="fa-brands fa-facebook"></i>
+                        <i class="fa-brands fa-twitter"></i>
+                        <i class="fa-solid fa-globe"></i>
+                    </div>
+                    <div class="p text-white">
+                        Copyright Â© 2019 All Rights
+                        Reserved.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="barsSideBar d-flex flex-column justify-content-between align-items-center py-3" id="barsSideBar">
+            <div class="logo py-3 px-1">
+                <img src="29melting-face-emoji-mediumSquareAt3X-v2-removebg-preview.png" alt="">
+            </div>
+            <div class="bars fw-bold fs-2" id="bars">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+            <div class="connnections d-flex flex-column justify-content-between align-items-center py-3">
+                <i class="fa-solid fa-globe pb-2"></i>
+                <i class="fa-solid fa-share-nodes pt-2"></i>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="row py-4 " id="mainSection">
+
+        </div>
+    </div>
+
+    <section class="detailes position-absolute top-0 bottom-0 start-0 end-0 bg-black d-none z-3 pt-5" id="detailes">
+        <div class="container">
+            <div class="row" id="rowDetailes">
+
+            </div>
+            <button class="btn-close btn-close-white" id="btnDetailesClose" onclick="closeDetails()"></button>
+        </div>
+    </section>
+
+    <script src="js/code.jquery.com_jquery-3.7.0.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+
+</html>
